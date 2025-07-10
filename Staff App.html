@@ -1,0 +1,40 @@
+<html lang=en>
+  <head>
+  <title> "Staff Application"</title>
+  </head>
+<body>
+
+<form method="POST" action="https://script.google.com/macros/s/AKfycbxi9O86UpB8bBxrw3X3n1tyi9L03r5MQjkNVdBCsVxbuwMtN8KV2jdwN90WMr1K8pUd0A/exec">
+ <h1>About Me</h1>
+  <label>First Name: <input type="text" name="firstname" required/></label><br />
+  <label>Last Name: <input type="text" name="lastname" required/></label><br />
+  <label>Date Of Birth: <input type="date" name="birthday" required/></label><br />
+  <label>SS Number: </label><input type="password" name="ss1" pattern = "^(?!000|666)[0-8][0-9]{2}-?(?!00)[0-9]{2}-?(?!0000)[0-9]{4}$" required/>
+  
+  <label for="half">What half are you applying for?:</label>
+<select id="half" name="half" size="1" required>
+  <option ></option>
+  <option value="Counslor">Full</option>
+  <option value="Waiter">1st</option>
+  <option value="Lifeguard">2nd</option>
+</select><br>
+  <label>Name: <input type="text" name="name" required/></label><br />
+  <label>Email: <input type="email" name="email" required/></label><br />
+    
+    
+  <label for="job">What job are you applying for?:</label>
+<select id="job" name="job" size="1" required>
+  <option ></option>
+  <option value="Counslor">Counslor</option>
+  <option value="Waiter">Waiter</option>
+  <option value="Lifeguard">Lifeguard</option>
+  <option value="Rotator">Rotator</option>
+  <option value="Other">Other</option>
+</select><br>
+<label>If other please spesify: <input type="text" name="other" /></label><br />
+
+  <input type="submit" value="Send" />
+</form>
+
+</body>
+</html>
