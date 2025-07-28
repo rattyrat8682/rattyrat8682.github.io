@@ -101,9 +101,7 @@
       button[type="submit"]:hover {
         background-color: #0056b3;
       }
-      
 
-      
       button[type="button" class="back-button"] {
         background-color: #007bff;
         color: white;
@@ -113,12 +111,12 @@
         font-size: 16px;
         cursor: pointer;
         margin-top: 20px;
-        display: flexbox;
+        display: block;
         width: 100%;
-        flex-direction: column;
+        ;
       }
-      
-       button[type="button" class="next-button"] {
+
+      button[type="button" class="next-button"] {
         background-color: #007bff;
         color: white;
         padding: 12px 20px;
@@ -131,229 +129,245 @@
         width: 100%;
         flex-direction: column;
       }
-      
+
       .form-step {
-  display: none;
-}
+        display: none;
+      }
 
-.form-step.active {
-  display: block;
-}
+      .form-step.active {
+        display: block;
+      }
 
-.nav-buttons {
-  margin-top: 20px;
-  text-align: right;
-}
+      .nav-buttons {
+        margin-top: 20px;
+        text-align: right;
+      }
 
-.nav-buttons button {
-  margin-left: 10px;
-}
+      .nav-buttons button {
+        margin-left: 10px;
+      }
     </style>
   </head>
 
   <body>
     <h1>Staff Application Form</h1>
-    <form id="applicationForm" method="POST" action="https://lg79jetlzf.execute-api.us-east-1.amazonaws.com/submit_staff_app">
+    <form
+      id="applicationForm"
+      method="POST"
+      action="https://lg79jetlzf.execute-api.us-east-1.amazonaws.com/submit_staff_app">
       <div class="form-step active" data-step="1">
-  <h2>General Information</h2>
-      <div class="form-section">
-        <label>Position(s) Applying For <input type="text" name="job" required /></label>
-        <div class="inline-third">
-          <label>Date of Birth <input type="date" name="dob" required /></label>
+        <h2>General Information</h2>
+        <label>What Half of the Summer are you Applying for?<select id="half" name="GeneralInformation.half" size="1" required>
+                <option></option>
+                <option value="First Half">First Half</option>
+                <option value="Second Half">Second Half</option>
+                <option value="Full Summer">Full Summer</option></select></label>
+        <div class="form-section">
+          <label>What Job Are You Applying For? <input type="text" name="GeneralInformation.job" required /></label>
+          <div class="inline-third">
+            <label>Date of Birth <input type="date" name="GeneralInformation.dob" required /></label>
+          </div>
+          <div class="inline-third">
+            <label>Age <input type="number" name="GeneralInformation.age" required min="0" /></label>
+          </div>
         </div>
-        <div class="inline-third">
-          <label>Age <input type="number" name="age" required min="0" /></label>
-        </div>
-      </div>
-      
-      <div class="form-section">
-        <label>Full Name</label> <br />
-        <div class="inline"><input type="text" name="lastName" placeholder="Last" required /></div>
-        <div class="inline"><input type="text" name="firstName" placeholder="First" required /></div>
-        <label>Social Security # <input type="text" name="ssn" required /></label>
-      </div>
-        
-              
 
-      <div class="form-section">
-        <label>Home Phone <input type="tel" name="homePhone" required /></label>
-        <label>Cell Phone <input type="tel" name="cellPhone" required /></label>
-        <label>Email <input type="email" name="email" required /></label>
-      </div>
-         <div class="nav-buttons" >
-  <button type="button" class="next-button">Next</button>
-</div>
-      </div>
-<div class="form-step" data-step="2">
-      <div class="form-section">
-        <label>Home Address <input type="text" name="homeAddress" required /></label>
-        <div class="inline">
-          <label>City <input type="text" name="homeCity" required /></label>
+        <div class="form-section">
+          <label>Full Name</label> <br />
+          <div class="inline">
+            <input type="text" name="GeneralInformation.lastName" placeholder="Last" required />
+          </div>
+          <div class="inline">
+            <input type="text" name="GeneralInformation.firstName" placeholder="First" required />
+          </div>
+          <label>Social Security # <input type="text" name="GeneralInformation.ssn" required /></label>
         </div>
-        <div class="inline">
-          <label
-            >State
-            <select id="homeState" name="homeState" size="1" required>
-              <option></option>
-              <option value="Alabama">Alabama</option>
-              <option value="Alaska">Alaska</option>
-              <option value="Arizona">Arizona</option>
-              <option value="Arkansas">Arkansas</option>
-              <option value="California">California</option>
-              <option value="Colorado">Colorado</option>
-              <option value="Connecticut">Connecticut</option>
-              <option value="Delaware">Delaware</option>
-              <option value="Florida">Florida</option>
-              <option value="Georgia">Georgia</option>
-              <option value="Hawaii">Hawaii</option>
-              <option value="Idaho">Idaho</option>
-              <option value="Illinois">Illinois</option>
-              <option value="Indiana">Indiana</option>
-              <option value="Iowa">Iowa</option>
-              <option value="Kansas">Kansas</option>
-              <option value="Kentucky">Kentucky</option>
-              <option value="Louisiana">Louisiana</option>
-              <option value="Maine">Maine</option>
-              <option value="Maryland">Maryland</option>
-              <option value="Massachusetts">Massachusetts</option>
-              <option value="Michigan">Michigan</option>
-              <option value="Minnesota">Minnesota</option>
-              <option value="Mississippi">Mississippi</option>
-              <option value="Missouri">Missouri</option>
-              <option value="Montana">Montana</option>
-              <option value="Nebraska">Nebraska</option>
-              <option value="Nevada">Nevada</option>
-              <option value="New Hampshire">New Hampshire</option>
-              <option value="New Jersey">New Jersey</option>
-              <option value="New Mexico">New Mexico</option>
-              <option value="New York">New York</option>
-              <option value="North Carolina">North Carolina</option>
-              <option value="North Dakota">North Dakota</option>
-              <option value="Ohio">Ohio</option>
-              <option value="Oklahoma">Oklahoma</option>
-              <option value="Oregon">Oregon</option>
-              <option value="Pennsylvania">Pennsylvania</option>
-              <option value="Rhode Island">Rhode Island</option>
-              <option value="South Carolina">South Carolina</option>
-              <option value="South Dakota">South Dakota</option>
-              <option value="Tennessee">Tennessee</option>
-              <option value="Texas">Texas</option>
-              <option value="Utah">Utah</option>
-              <option value="Vermont">Vermont</option>
-              <option value="Virginia">Virginia</option>
-              <option value="Washington">Washington</option>
-              <option value="West Virginia">West Virginia</option>
-              <option value="Wisconsin">Wisconsin</option>
-              <option value="Wyoming">Wyoming</option></select
-            ><br
-          /></label>
-        </div>
-        <label>Zip <input type="text" name="homeZip" required /></label>
 
-        <label>Mailing Address (if different) <input type="text" name="mailAddress" /></label>
-        <div class="inline">
-          <label>City <input type="text" name="mailCity" /></label>
+        <div class="form-section">
+          <label>Home Phone <input type="tel" name="ContactInformation.homePhone" required /></label>
+          <label>Cell Phone <input type="tel" name="ContactInformation.cellPhone" required /></label>
+          <label>Email <input type="email" name="ContactInformation.email" required /></label>
         </div>
-        <div class="inline">
-          <label>State <input type="text" name="mailState" /></label>
+        <div class="nav-buttons">
+          <button type="button" class="next-button">Next</button>
         </div>
-        <label>Zip <input type="text" name="mailZip" /></label>
       </div>
-  
-        
-        <div class="nav-buttons" >
+      <div class="form-step" data-step="2">
+        <div class="form-section">
+          <label>Home Address <input type="text" name="Address.homeAddress" required /></label>
+          <div class="inline">
+            <label>City <input type="text" name="Address.homeCity" required /></label>
+          </div>
+          <div class="inline">
+            <label>State
+              <select id="homeState" name="Address.homeState" size="1" required>
+                <option></option>
+                <option value="Alabama">Alabama</option>
+                <option value="Alaska">Alaska</option>
+                <option value="Arizona">Arizona</option>
+                <option value="Arkansas">Arkansas</option>
+                <option value="California">California</option>
+                <option value="Colorado">Colorado</option>
+                <option value="Connecticut">Connecticut</option>
+                <option value="Delaware">Delaware</option>
+                <option value="Florida">Florida</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Hawaii">Hawaii</option>
+                <option value="Idaho">Idaho</option>
+                <option value="Illinois">Illinois</option>
+                <option value="Indiana">Indiana</option>
+                <option value="Iowa">Iowa</option>
+                <option value="Kansas">Kansas</option>
+                <option value="Kentucky">Kentucky</option>
+                <option value="Louisiana">Louisiana</option>
+                <option value="Maine">Maine</option>
+                <option value="Maryland">Maryland</option>
+                <option value="Massachusetts">Massachusetts</option>
+                <option value="Michigan">Michigan</option>
+                <option value="Minnesota">Minnesota</option>
+                <option value="Mississippi">Mississippi</option>
+                <option value="Missouri">Missouri</option>
+                <option value="Montana">Montana</option>
+                <option value="Nebraska">Nebraska</option>
+                <option value="Nevada">Nevada</option>
+                <option value="New Hampshire">New Hampshire</option>
+                <option value="New Jersey">New Jersey</option>
+                <option value="New Mexico">New Mexico</option>
+                <option value="New York">New York</option>
+                <option value="North Carolina">North Carolina</option>
+                <option value="North Dakota">North Dakota</option>
+                <option value="Ohio">Ohio</option>
+                <option value="Oklahoma">Oklahoma</option>
+                <option value="Oregon">Oregon</option>
+                <option value="Pennsylvania">Pennsylvania</option>
+                <option value="Rhode Island">Rhode Island</option>
+                <option value="South Carolina">South Carolina</option>
+                <option value="South Dakota">South Dakota</option>
+                <option value="Tennessee">Tennessee</option>
+                <option value="Texas">Texas</option>
+                <option value="Utah">Utah</option>
+                <option value="Vermont">Vermont</option>
+                <option value="Virginia">Virginia</option>
+                <option value="Washington">Washington</option>
+                <option value="West Virginia">West Virginia</option>
+                <option value="Wisconsin">Wisconsin</option>
+                <option value="Wyoming">Wyoming</option></select>
+              <br/>
+            </label>
+          </div>
+          <label>Zip <input type="text" name="Address.homeZip" required /></label>
+
+          <label>Mailing Address (if different) <input type="text" name="mailAddress" /></label>
+          <div class="inline">
+            <label>City <input type="text" name="Address.mailCity" /></label>
+          </div>
+          <div class="inline">
+            <label>State <input type="text" name="Address.mailState" /></label>
+          </div>
+          <label>Zip <input type="text" name="Address.mailZip" /></label>
+        </div>
+
+        <div class="nav-buttons">
           <button type="button" class="back-button">Back</button>
-  <button type="button" class="next-button">Next</button>
-</div>
-        
-        </div>
-      
-      <div class="form-step" data-step="3" >
-  <h2>Yeshiva Information</h2>
-<!--Up to here in adding to the google script-->
-      <div class="form-section">
-        <label>Yeshiva Attending <input type="text" name="yeshiva" required /></label>
-        <div class="inline">
-          <label>Hebrew Grade <input type="text" name="hebrewGrade" required /></label>
-        </div>
-        <div class="inline">
-          <label>English Grade <input type="text" name="englishGrade" required /></label>
-        </div>
-        <label>Rebbi's Name <input type="text" name="rebbi" required /></label>
-        <label>Rebbi's Phone # <input type="tel" name="rebbiPhone" required /></label>
-        <label>Years in this Yeshiva <input type="number" name="yearsYeshiva" required /></label>
-        <label>Previous Yeshivas (if less than 2 years) <textarea name="prevYeshivas"></textarea></label>
-      </div>
-        
-        <div class="nav-buttons">
-  <button type="button" class="back-button">Back</button>
-  <button type="button" class="next-button">Next</button>
-</div>
-        
-      </div>
-      <div class="form-step" data-step="4" >
-  <h2>Family Information</h2>
-      <div class="form-section">
-        <label>Father’s Name <input type="text" name="fatherName" required /></label>
-        <label>Occupation <input type="text" name="fatherOccupation" required /></label>
-        <label>Father’s Cell <input type="tel" name="fatherCell" required /></label>
-
-        <label>Mother’s Name <input type="text" name="motherName" required /></label>
-        <label>Occupation <input type="text" name="motherOccupation" required /></label>
-        <label>Mother’s Cell <input type="tel" name="motherCell" required /></label>
-
-        <label>Parents' Marital Status <input type="text" name="maritalStatus" required /></label>
-        <label>Shul Name <input type="text" name="shul" required /></label>
-      </div>
-        
-        <div class="nav-buttons">
-  <button type="button" class="back-button">Back</button>
-  <button type="button" class="next-button">Next</button>
-</div>
-        
-      </div>
-      <div class="form-step" data-step="5" >
-  <h2>Prevous Experience</h2>
-      <div class="form-section">
-        <h3>Experience</h3>
-        <label>Camp #1 <input type="text" name="camp1" placeholder="Name / Years / Position" /></label>
-        <label>Camp #2 <input type="text" name="camp2" placeholder="Name / Years / Position" /></label>
-        <label>Camp #3 <input type="text" name="camp3" placeholder="Name / Years / Position" /></label>
-        <label>Other Experience <textarea name="otherExp"></textarea></label>
-      </div>
-
-      <div class="form-section">
-        <label>Skills, Talents, and Competency Level <textarea name="skills" required></textarea></label>
-      </div>
-
-        <div class="nav-buttons">
-  <button type="button" class="back-button">Back</button>
-  <button type="button" class="next-button">Next</button>
-</div>
-        
-      </div>
-      
-      <div class="form-step" data-step="6" >
-  <h2>Other stuff</h2>
-      
-      <div class="form-section">
-        <label>Have you ever been convicted of any crime (including child abuse)?</label>
-        <div class="radio-group">
-          <label><input type="radio" name="convicted" value="yes" required /> Yes</label>
-          <label><input type="radio" name="convicted" value="no" required /> No</label>
+          <button type="button" class="next-button">Next</button>
         </div>
       </div>
 
-      <div class="form-section">
-        <h3>References</h3>
-        <label>Reference #1 <input type="text" name="ref1" placeholder="Name / Title / Phone" required /></label>
-        <label>Reference #2 <input type="text" name="ref2" placeholder="Name / Title / Phone" required /></label>
-      </div>
+      <div class="form-step" data-step="3">
+        <h2>Yeshiva Information</h2>
+        <!--Up to here in adding to the google script-->
+        <div class="form-section">
+          <label>Yeshiva Attending <input type="text" name="yeshiva.yeshiva" required /></label>
+          <div class="inline">
+            <label>Hebrew Grade <input type="text" name="yeshiva.hebrewGrade" required /></label>
+          </div>
+          <div class="inline">
+            <label>English Grade <input type="text" name="yeshiva.englishGrade" required /></label>
+          </div>
+          <label>Rebbi's Name <input type="text" name="yeshiva.rebbi" required /></label>
+          <label>Rebbi's Phone # <input type="tel" name="yeshiva.rebbiPhone" required /></label>
+          <label>Years in this Yeshiva <input type="number" name="yeshiva.yearsYeshiva" required /></label>
+          <label>Previous Yeshivas (if less than 2 years) <textarea name="yeshiva.prevYeshivas"></textarea></label>
+        </div>
+
         <div class="nav-buttons">
-  <button type="button" class="back-button">Back</button>
-</div>
-      <button type="submit">Submit</button>
-      
+          <button type="button" class="back-button">Back</button>
+          <button type="button" class="next-button">Next</button>
+        </div>
+      </div>
+      <div class="form-step" data-step="4">
+        <h2>Family Information</h2>
+        <div class="form-section">
+          <h3>Fathers information</h3>
+          <label>Name <input type="text" name="family.fatherName" required /></label>
+          <label>Occupation <input type="text" name="family.fatherOccupation" required /></label>
+          <label> Cell <input type="tel" name="family.fatherCell" required /></label>
+
+          <label>Mother’s Name <input type="text" name="family.motherName" required /></label>
+          <label>Occupation <input type="text" name="family.motherOccupation" required /></label>
+          <label>Mother’s Cell <input type="tel" name="family.motherCell" required /></label>
+
+          <label>Parents Marital Status<select id="maritalStatus" name="family.maritalStatus" size="1" required>
+                <option></option>
+                <option value="Married">Married</option>
+                <option value="Divorced">Divorced</option>
+                <option value="Deceased ">Deceased </option>
+                <option value="Separated">Separated</option>
+                <option value="Single">Single</option></select></label>
+          
+          <label>Shul Name <input type="text" name="family.shul" required /></label>
+        </div>
+
+        <div class="nav-buttons">
+          <button type="button" class="back-button">Back</button>
+          <button type="button" class="next-button">Next</button>
+        </div>
+      </div>
+      <div class="form-step" data-step="5">
+        <h2>Prevous Experience</h2>
+        <div class="form-section">
+          <h3>Experience</h3>
+          <label>Camp #1 <input type="text" name="xp.camp1" placeholder="Name / Years / Position" /></label>
+          <label>Camp #2 <input type="text" name="xp.camp2" placeholder="Name / Years / Position" /></label>
+          <label>Camp #3 <input type="text" name="xp.camp3" placeholder="Name / Years / Position" /></label>
+          <label>Other Experience <textarea name="xp.otherExp"></textarea></label>
+        </div>
+
+        <div class="form-section">
+          <label>Skills, Talents, and Competency Level <textarea name="xp.skills" required></textarea></label>
+        </div>
+        
+        <div class="form-section">
+          <h3>References</h3>
+          <label>Reference #1 <input type="text" name="other.ref1" placeholder="Name / Title / Phone" required /></label>
+          <label>Reference #2 <input type="text" name="other.ref2" placeholder="Name / Title / Phone" required /></label>
+        </div>
+
+        <div class="nav-buttons">
+          <button type="button" class="back-button">Back</button>
+          <button type="button" class="next-button">Next</button>
+        </div>
+      </div>
+
+      <div class="form-step" data-step="6">
+        <h2>Required Information</h2>
+
+        <div class="form-section">
+          <label>Have you ever been convicted of any crime (including child abuse)?
+            <select id="crime" name="other.crime" size="1" required>
+                <option></option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Yes ">Rather not say </option>
+                <option value="Yes">Convicted? No. Commited? Yes.</option>
+                </select></label>
+        </div>
+
+        
+        <div class="nav-buttons">
+          <button type="button" class="back-button">Back</button>
+        </div>
+        <button type="submit">Submit</button>
       </div>
       <p class="error" id="formError"></p>
     </form>
@@ -382,14 +396,14 @@
         }
 
         // Validate SSN (must be 9 digits or in format XXX-XX-XXXX)
-        const ssn = form.ssn.value.trim();
+        const ssn = form["GeneralInformation.ssn"].value.trim();
         if (!/^\d{3}-\d{2}-\d{4}$/.test(ssn) && !/^\d{9}$/.test(ssn)) {
           e.preventDefault();
-          return showError("Please enter a valid SSN (XXX-XX-XXXX or 9 digits).", form.ssn);
+          return showError("Please enter a valid SSN (XXX-XX-XXXX or 9 digits).", form["GeneralInformation.ssn"]);
         }
 
         // Validate phone numbers
-        const phoneFields = ["homePhone", "cellPhone", "rebbiPhone", "fatherCell", "motherCell"];
+        const phoneFields = ["ContactInformation.homePhone", "ContactInformation.cellPhone", "rebbiPhone", "fatherCell", "motherCell"];
         for (let name of phoneFields) {
           const phone = form[name].value.replace(/\D/g, "");
           if (!/^\d{10}$/.test(phone)) {
@@ -399,7 +413,7 @@
         }
 
         // Validate email (extra validation just in case)
-        const email = form.email.value;
+        const email = form["ContactInformation.email"].value;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
           e.preventDefault();
@@ -407,7 +421,7 @@
         }
 
         // Validate names (only letters and spaces)
-        const nameFields = ["lastName", "firstName", "fatherName", "motherName", "rebbi"];
+        const nameFields = ["GeneralInformation.lastName", "GeneralInformation.firstName", "family.fatherName", "family.motherName", "yeshiva.rebbi"];
         for (let name of nameFields) {
           if (!/^[a-zA-Z\s'-]+$/.test(form[name].value)) {
             e.preventDefault();
@@ -476,17 +490,28 @@
           if (existingMsg) existingMsg.remove();
         }
       };
+      
+      
+      ////////////////////////////
+      //in line validate
+      ///////////////////////////
       const form = document.getElementById("applicationForm");
 
       // Auto-format + validate SSN
-      form.ssn.addEventListener("input", (e) => {
+      form["GeneralInformation.ssn"].addEventListener("input", (e) => {
         e.target.value = formatSSN(e.target.value);
         const valid = /^\d{3}-\d{2}-\d{4}$/.test(e.target.value);
         validateField(e.target, valid, "SSN must be in XXX-XX-XXXX format");
       });
 
       // Phone Fields
-      const phoneNames = ["homePhone", "cellPhone", "rebbiPhone", "fatherCell", "motherCell"];
+      const phoneNames = [
+        "ContactInformation.homePhone",
+        "ContactInformation.cellPhone",
+        "yeshiva.rebbiPhone",
+        "family.fatherCell",
+        "family.motherCell"
+      ];
       phoneNames.forEach((name) => {
         const field = form[name];
         field.addEventListener("input", (e) => {
@@ -497,13 +522,13 @@
       });
 
       // Email live validation
-      form.email.addEventListener("input", (e) => {
+      form["ContactInformation.email"].addEventListener("input", (e) => {
         const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value);
         validateField(e.target, valid, "Enter a valid email address");
       });
 
       // Zip code validation
-      form.homeZip.addEventListener("input", (e) => {
+      form["Address.homeZip"].addEventListener("input", (e) => {
         const value = e.target.value.replace(/[^\d\-]/g, "").slice(0, 10);
         e.target.value = value;
         const valid = /^\d{5}(-\d{4})?$/.test(value);
@@ -511,7 +536,7 @@
       });
 
       // Name validation (letters, spaces, hyphens, apostrophes)
-      const nameFields = ["firstName", "lastName", "rebbi", "fatherName", "motherName"];
+      const nameFields = ["GeneralInformation.firstName", "GeneralInformation.lastName", "yeshiva.rebbi", "family.fatherName", "family.motherName"];
       nameFields.forEach((name) => {
         const field = form[name];
         field.addEventListener("input", (e) => {
@@ -521,73 +546,72 @@
       });
 
       // Age check
-      form.age.addEventListener("input", (e) => {
+      form["GeneralInformation.age"].addEventListener("input", (e) => {
         const age = parseInt(e.target.value);
         const valid = age >= 14 && age <= 99;
         validateField(e.target, valid, "Age must be between 14–99");
       });
-      
-  document.addEventListener("DOMContentLoaded", function () {
-      
-      let currentStep = 1;
-const steps = document.querySelectorAll(".form-step");
-const totalSteps = steps.length;
-const form = document.getElementById("applicationForm");
 
-function showStep(step) {
-  steps.forEach((stepDiv) => {
-    stepDiv.classList.remove("active");
-  });
-  const nextStep = document.querySelector(`.form-step[data-step="${step}"]`);
-  if (nextStep) {
-    nextStep.classList.add("active");
-  }
-}
-showStep(currentStep);
+      document.addEventListener("DOMContentLoaded", function () {
+        let currentStep = 1;
+        const steps = document.querySelectorAll(".form-step");
+        const totalSteps = steps.length;
+        const form = document.getElementById("applicationForm");
 
-// Validate current step
-function validateStep(step) {
-  const stepDiv = document.querySelector(`.form-step[data-step="${step}"]`);
-  const requiredFields = stepDiv.querySelectorAll("[required]");
-  let allValid = true;
+        function showStep(step) {
+          steps.forEach((stepDiv) => {
+            stepDiv.classList.remove("active");
+          });
+          const nextStep = document.querySelector(`.form-step[data-step="${step}"]`);
+          if (nextStep) {
+            nextStep.classList.add("active");
+          }
+        }
+        showStep(currentStep);
 
-  for (let field of requiredFields) {
-    const value = field.value.trim();
-    if (!value) {
-      field.classList.add("invalid");
-      allValid = false;
-    } else {
-      field.classList.remove("invalid");
-    }
-  }
+        // Validate current step
+        function validateStep(step) {
+          const stepDiv = document.querySelector(`.form-step[data-step="${step}"]`);
+          const requiredFields = stepDiv.querySelectorAll("[required]");
+          let allValid = true;
 
-  if (!allValid) {
-    const errorBox = document.getElementById("formError");
-    errorBox.textContent = "Please fill out all required fields in this section.";
-  }
+          for (let field of requiredFields) {
+            const value = field.value.trim();
+            if (!value) {
+              field.classList.add("invalid");
+              allValid = false;
+            } else {
+              field.classList.remove("invalid");
+            }
+          }
 
-  return allValid;
-}
+          if (!allValid) {
+            const errorBox = document.getElementById("formError");
+            errorBox.textContent = "Please fill out all required fields in this section.";
+          }
 
-// Button handlers
-form.addEventListener("click", function (e) {
-  if (e.target.classList.contains("next-button")) {
-    e.preventDefault();
-    if (validateStep(currentStep)) {
-      currentStep++;
-      showStep(currentStep);
-      document.getElementById("formError").textContent = "";
-    }
-  }
+          return allValid;
+        }
 
-  if (e.target.classList.contains("back-button")) {
-    e.preventDefault();
-    currentStep--;
-    showStep(currentStep);
-    document.getElementById("formError").textContent = "";
-  }
-});
-    });
+        // Button handlers
+        form.addEventListener("click", function (e) {
+          if (e.target.classList.contains("next-button")) {
+            e.preventDefault();
+            if (validateStep(currentStep)) {
+              currentStep++;
+              showStep(currentStep);
+              document.getElementById("formError").textContent = "";
+            }
+          }
+
+          if (e.target.classList.contains("back-button")) {
+            e.preventDefault();
+            currentStep--;
+            showStep(currentStep);
+            document.getElementById("formError").textContent = "";
+          }
+        });
+      });
     </script>
   </body>
 </html>
