@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Camp Medical Form</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: auto; }
+    label { display: block; margin-top: 10px; }
+    textarea { width: 100%; height: 60px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    td, th { border: 1px solid #aaa; padding: 5px; text-align: center; }
+    .section-title { background-color: #eee; padding: 10px; margin-top: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Camp Medical Form</h1>
+  <form>
+
+    <!-- Camper Info -->
+    <div class="section-title">Camper Information</div>
+    <label>Last Name: <input type="text" name="lastName" required></label>
+    <label>First Name: <input type="text" name="firstName" required></label>
+    <label>Birth Date: <input type="date" name="birthDate" required></label>
+    <label>Address: <input type="text" name="address" required></label>
+    <label>City/State/Zip: <input type="text" name="cityStateZip" required></label>
+    <label>Phone: <input type="tel" name="phone" required></label>
+
+    <!-- Immunization & Medical History -->
+    <div class="section-title">1. Immunization History / Allergies / Medical History</div>
+    
+<!-- Immunization History -->
+<h3>Immunization History</h3>
+<table>
+  <tr>
+    <th>Vaccine</th>
+    <th>Date Series Completed</th>
+    <th>Most Recent Booster</th>
+  </tr>
+  <tr><td>DPT/DT</td><td><input type="text" name="dpt_series"></td><td><input type="text" name="dpt_booster"></td></tr>
+  <tr><td>Tetanus</td><td><input type="text" name="tetanus_series"></td><td><input type="text" name="tetanus_booster"></td></tr>
+  <tr><td>Oral Polio</td><td><input type="text" name="polio_series"></td><td><input type="text" name="polio_booster"></td></tr>
+  <tr><td>MMR 1</td><td colspan="2"><input type="text" name="mmr1"></td></tr>
+  <tr><td>MMR 2</td><td colspan="2"><input type="text" name="mmr2"></td></tr>
+  <tr><td>PPD/Mantoux</td><td colspan="2"><input type="text" name="ppd"></td></tr>
+  <tr><td>Hepatitis A</td><td colspan="2"><input type="text" name="hepA"></td></tr>
+  <tr><td>Influenza Type B</td><td colspan="2"><input type="text" name="fluB"></td></tr>
+</table>
+
+<!-- Allergies -->
+<h3>Allergies</h3>
+<table>
+  <tr>
+    <th>Allergen</th>
+    <th>Yes</th>
+    <th>No</th>
+  </tr>
+  <tr><td>Penicillin</td><td><input type="radio" name="penicillin" value="yes"></td><td><input type="radio" name="penicillin" value="no"></td></tr>
+  <tr><td>Sulfa</td><td><input type="radio" name="sulfa" value="yes"></td><td><input type="radio" name="sulfa" value="no"></td></tr>
+  <tr><td>Cephalosporin</td><td><input type="radio" name="cephalosporin" value="yes"></td><td><input type="radio" name="cephalosporin" value="no"></td></tr>
+  <tr><td>Other Meds</td><td><input type="radio" name="otherMeds" value="yes"></td><td><input type="radio" name="otherMeds" value="no"></td></tr>
+  <tr><td>Foods (list below)</td><td><input type="radio" name="foodAllergy" value="yes"></td><td><input type="radio" name="foodAllergy" value="no"></td></tr>
+  <tr><td>Bees/Insect Bites</td><td><input type="radio" name="beeAllergy" value="yes"></td><td><input type="radio" name="beeAllergy" value="no"></td></tr>
+</table>
+<label>List Food Allergies: <input type="text" name="foodAllergyList"></label>
+
+<!-- Medical History -->
+<h3>Medical History</h3>
+<table>
+  <tr>
+    <th>Condition</th>
+    <th>Comments / Illness Date</th>
+  </tr>
+  <tr><td>Chicken Pox</td><td><input type="text" name="chickenpox_comment"></td></tr>
+  <tr><td>Measles</td><td><input type="text" name="measles_comment"></td></tr>
+  <tr><td>German Measles</td><td><input type="text" name="germanMeasles_comment"></td></tr>
+  <tr><td>Mumps</td><td><input type="text" name="mumps_comment"></td></tr>
+  <tr><td>Pneumonia</td><td><input type="text" name="pneumonia_comment"></td></tr>
+  <tr><td>Meningitis</td><td><input type="text" name="meningitis_comment"></td></tr>
+  <tr><td>Diabetes</td><td><input type="text" name="diabetes_comment"></td></tr>
+  <tr><td>Seizures</td><td><input type="text" name="seizures_comment"></td></tr>
+  <tr><td>Asthma</td><td><input type="text" name="asthma_comment"></td></tr>
+</table>
+
+    <!-- Physical Exam -->
+    <div class="section-title">2. Physical Exam</div>
+    <label>Height: <input type="text" name="height"></label>
+    <label>Weight: <input type="text" name="weight"></label>
+    <label>Blood Pressure: <input type="text" name="bp"></label>
+    <label>Glasses/Lenses Prescription: <input type="text" name="prescription"></label>
+    <label>Operations, Injuries, Fractures: <textarea name="operations"></textarea></label>
+    <label>Chronic or Recurrent Illness and Suggested Treatment: <textarea name="illnessTreatment"></textarea></label>
+    <label>Special Restrictions (Diet/Activity): <textarea name="restrictions"></textarea></label>
+    <label>Other Special Circumstances: <textarea name="specialCircumstances"></textarea></label>
+
+    <!-- PRN Medications -->
+    <div class="section-title">3. Over-the-Counter / PRN Medications</div>
+    <p>Doctor must sign and stamp this form authorizing these meds.</p>
+      <p>These are <b>ALLOWED</b> unless indicated. Only check the box if your son <b>CAN NOT</b> take these medications.</p>
+    <table>
+      <tr><th>Drug</th><th>Route</th><th>Schedule</th><th>CAN NOT TAKE</th><th>Comments</th></tr>
+      <tr><td>Acetaminophen</td><td>PO</td><td>q6hr prn</td><td><input type="checkbox" name="noTylenol"></td><td></td></tr>
+      <tr><td>Ibuprofen</td><td>PO</td><td>q4hr prn</td><td><input type="checkbox" name="noIbuprofen"></td><td></td></tr>
+      <tr><td>Robitussin</td><td>PO</td><td>q4hr prn</td><td><input type="checkbox" name="noRobitussin"></td><td></td></tr>
+      <tr><td>Dramamine</td><td>PO</td><td>½ hr before</td><td><input type="checkbox" name="noDramamine"></td><td></td></tr>
+      <tr><td>Benadryl</td><td>PO</td><td>q6hr prn</td><td><input type="checkbox" name="noBenadryl"></td><td></td></tr>
+      <tr><td>Sudafed</td><td>PO</td><td>q6–8hr</td><td><input type="checkbox" name="noSudafed"></td><td></td></tr>
+      <tr><td>Tums</td><td>PO</td><td>q30min prn</td><td><input type="checkbox" name="noTums"></td><td></td></tr>
+      <tr><td>Cortisone Ointment</td><td>TOP</td><td>As needed</td><td><input type="checkbox" name="noCortisone"></td><td></td></tr>
+      <tr><td>Antifungal Ointment/Spray</td><td>TOP</td><td>As needed</td><td><input type="checkbox" name="noAntifungal"></td><td></td></tr>
+    </table>
+
+    <label>Doctor Name: <input type="text" name="doctorName"></label>
+    <label>Doctor Address: <input type="text" name="doctorAddress"></label>
+    <label>Doctor Phone: <input type="tel" name="doctorPhone"></label>
+    <label>Date: <input type="date" name="doctorDate"></label>
+
+    <!-- Objection & Permissions -->
+    <label><input type="checkbox" name="meningitisObjection"> I object to the Meningococcal Meningitis Vaccine</label>
+    <label>
+      Over-the-counter medication permission:
+      <select name="otcPermission">
+        <option value="allow">Allow</option>
+        <option value="deny">Do Not Allow</option>
+      </select>
+    </label>
+
+    <!-- Emergency Contact & Consent -->
+    <div class="section-title">Emergency Information & Consent</div>
+    <label>Parent/Guardian Name: <input type="text" name="parentName"></label>
+    <label>Home Phone: <input type="tel" name="homePhone"></label>
+    <label>Cell Phone: <input type="tel" name="cellPhone"></label>
+    <label>Parent Emergency Phone: <input type="tel" name="parentEmergencyPhone"></label>
+    <label>Other Emergency Contact Name: <input type="text" name="otherContact"></label>
+    <label>Other Emergency Contact Phone: <input type="tel" name="otherPhone"></label>
+    <label>Parent/Guardian Signature: <input type="text" name="parentSignature"></label>
+
+    <!-- Insurance Info -->
+    <div class="section-title">Insurance & Payment</div>
+    <label>Medical Insurance Name: <input type="text" name="insuranceName"></label>
+    <label>Policy Number: <input type="text" name="policyNumber"></label>
+    <label>Credit Card Name: <input type="text" name="ccName"></label>
+    <label>Credit Card Number: <input type="text" name="ccNumber"></label>
+    <label>Expiration Date: <input type="month" name="ccExp"></label>
+    <label>Credit Card Signature: <input type="text" name="ccSignature"></label>
+
+    <br><br>
+    <button type="submit">Submit Form</button>
+  </form>
+</body>
+</html>
